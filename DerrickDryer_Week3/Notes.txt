@@ -1,9 +1,0 @@
-index_step1.php
-    a) float(56) float(78.780000000000001136868377216160297393798828125) float(34.56000000000000227373675443232059478759765625)
-    b) array(3) { ["jac2233"]=> float(56) ["abc4530"]=> float(78.780000000000001136868377216160297393798828125) ["ghj1238"]=> float(34.56000000000000227373675443232059478759765625) }
-
-index_step2.php
-    c) You don't exactly get an error, however, the output would just be "Array". You don't get an error with $hourlySalary because it is a single defined variable that is nor in an array. An Array needs specification of what it is getting requested unless used in a var_dump
-
-index_step3.php
-    d)

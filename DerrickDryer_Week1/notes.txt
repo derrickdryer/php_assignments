@@ -1,9 +1,0 @@
-A. http://localhost:8081/Week1DerrickDryer/index.php
-B. http://localhost:8081/Week1DerrickDryer/display_results.php?userId=test&hourlySalary=7.99&hoursPerWeek=80&daysPerWeek=5&vacationPerYear=1&holidayPerYear=1\
-C. http://localhost:8081/Week1DerrickDryer/index.php
-D. http://localhost:8081/Week1DerrickDryer/display_results.php
-E. You don't see any values as the POST method utilizes the server instead of the URL to get the input values. So as long at the method is post the url will never contain any values from client inputs.
-F. The url from the GET method used ?XXX&XXX=0.00&XXX to give the display_results.php its values. The '&' symbol separated each of the variables and the '=' allowed each variable to have a value.
-G. It can help with debugging and making sure values are calculated correctly.
-H. It reverts the input back into a string instead of a float.
-I. It is important to validate as it will allow you to use inputs as the required values as you cannot do math using strings. You need integers and floats to do math. It will also make sure things are formatted correctly.
