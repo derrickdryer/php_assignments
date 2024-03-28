@@ -9,7 +9,7 @@ if($orderID == null){
 }
 
 else {
-require('../inc/db_connect.php');
+require_once('../inc/db_connect.php');
 
 $queryOrders = 'SELECT * FROM orders
                 WHERE orderID = :orderID';
@@ -37,7 +37,7 @@ var_dump($order);
     <main>
         <h2>Order to Update: <?php echo isset($order) ? $order['orderID'] : 'Not set'; ?></h2>
         <form action="updateOrder.php" method="get" id="update_order_form">
-        <input type="submit" value="Update Order"><br>    
+        <input type="submit" name="action" value="Update Order"><br>    
         <table>
                 <tr>
                     <td>Customer</td>
@@ -58,7 +58,7 @@ var_dump($order);
                 <input type="hidden" name="orderID" value="<?php echo $order['orderID']; ?>">                
         </form>
         </table>
-        <p><a href="updateOrderItemsForm.php?id=<?php echo $order_id ?>">Update Order Items for this order</a></p>
+        <p><a href="updateOrderItemsForm.php?order_id=<?php echo $orderID ?>">Update Order Items for this order</a></p>
 	</main>
 
     <footer>

@@ -116,6 +116,14 @@ br {
 #add_product_form input {
     float: left;
 }
-#add_product_form input[text] {
+#add_product_form input[type=text] {
     width: 15em;
+}
+
+/**************************************
+* Style for order pages
+***************************************/
+
+#update_order_items_form input[type=text] {
+    width: 135px;
 }
