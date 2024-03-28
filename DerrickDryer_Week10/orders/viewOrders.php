@@ -37,8 +37,6 @@
                 <td><form action="updateOrderForm.php" method="get">
                     <input type="hidden" name="order_id"
                         value="<?php echo $order['orderID']; ?>">
-                    <input type="hidden" name="customer_id"
-                        value="<?php echo $order['customerID']; ?>">
                     <input type="submit" value="Update">
                 </form></td>
             </tr>

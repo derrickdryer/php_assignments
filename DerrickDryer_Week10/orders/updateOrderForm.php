@@ -1,12 +1,7 @@
 <?php
-if ($_SERVER['REQUEST_METHOD'] == 'GET' && !empty($_GET)) {
 if(!isset($orderID)){
 $orderID = filter_input(INPUT_GET, 'order_id', FILTER_VALIDATE_INT);
 }
-
-if(!isset($customerID)){
-    $customerID = filter_input(INPUT_GET, 'customer_id', FILTER_VALIDATE_INT);
-    }
 
 if($orderID == null){
     $error = "Error";
@@ -25,7 +20,6 @@ $order = $statement1->fetch();
 $statement1->closeCursor();
 var_dump($order);
 }
-}
 ?>
 <!DOCTYPE html>
 <html>
@@ -41,7 +35,7 @@ var_dump($order);
     <header><h1>Order Manager</h1></header>
 
     <main>
-        <h2>Order to Update: <?php echo $order['orderID']; ?></h2>
+        <h2>Order to Update: <?php echo isset($order) ? $order['orderID'] : 'Not set'; ?></h2>
         <form action="updateOrder.php" method="get" id="update_order_form">
         <input type="submit" value="Update Order"><br>    
         <table>
