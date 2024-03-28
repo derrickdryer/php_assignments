@@ -1,7 +1,12 @@
 <?php
-
+if ($_SERVER['REQUEST_METHOD'] == 'GET' && !empty($_GET)) {
 if(!isset($orderID)){
-$orderID = filter_input(INPUT_GET, 'orderID');
+$orderID = filter_input(INPUT_GET, 'order_id', FILTER_VALIDATE_INT);
+}
+
+if(!isset($customerID)){
+    $customerID = filter_input(INPUT_GET, 'customer_id', FILTER_VALIDATE_INT);
+    }
 
 if($orderID == null){
     $error = "Error";
@@ -20,10 +25,6 @@ $order = $statement1->fetch();
 $statement1->closeCursor();
 var_dump($order);
 }
-}
-
-if(!isset($customerID)){
-$customerID = filter_input(INPUT_GET, 'customerID');
 }
 ?>
 <!DOCTYPE html>
@@ -50,7 +51,7 @@ $customerID = filter_input(INPUT_GET, 'customerID');
                 </tr>
                 <tr>
                     <td>Card Type</td>
-                    <td><input type="text" name="cardNumber" value="<?php echo $order['cardType']; ?>"></td>
+                    <td><input type="text" name="cardType" value="<?php echo $order['cardType']; ?>"></td>
                 </tr>
                 <tr>
                     <td>Card Number</td>
@@ -60,7 +61,7 @@ $customerID = filter_input(INPUT_GET, 'customerID');
                     <td>Card Expires</td>
                     <td><input type="text" name="cardExpires" value="<?php echo $order['cardExpires']; ?>"></td>
                 </tr>
-                
+                <input type="hidden" name="orderID" value="<?php echo $order['orderID']; ?>">                
         </form>
         </table>
         <p><a href="updateOrderItemsForm.php?id=<?php echo $order_id ?>">Update Order Items for this order</a></p>
